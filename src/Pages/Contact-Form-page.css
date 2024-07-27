@@ -1,0 +1,158 @@
+/* Form styling for Contact page */
+
+
+
+  :root {
+    --color: #ffffffe0;
+    --color2: #ff9900e5;
+    --background: #0f0f0f;
+    --padding: 0rem 3rem;
+    /* --background2:#242424; */
+  }
+
+
+
+/* utility classes */
+
+
+.center{
+        text-align: center;
+
+}
+.left{
+    text-align: left;
+}
+.pl1{
+    padding-left: 1rem;
+
+}
+.pl0-5{
+    padding-left: .5rem;
+
+}
+.pb{
+
+   padding-bottom: 20vh;
+}
+
+.heading-small-white{
+        
+        color: var(--color);
+        font-weight: 550;
+        font-size: 1rem;
+}
+.ma-tp-btm-1{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+
+
+
+section.Contact-Us{
+    padding: var(--padding);
+    padding-top: 15vh;
+   
+    padding-bottom: 15vh;
+    
+}
+.contact-heading{
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid red; */
+    margin-bottom: 10vh;
+    overflow: hidden;
+    position: relative;
+}
+.heading-text{
+    z-index: 100;
+}
+
+
+.contact-heading img{
+    position: absolute;
+    z-index: 1;
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    bottom: 0;
+    object-fit: cover;
+}
+
+.headings{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 2rem;
+    text-align: left;
+    /* border: 2px solid red; */
+}
+.labeler{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: start;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: .8rem;
+    color: var(--color);
+        font-weight: 550;
+}
+.row-flex{
+    display: flex;
+    gap: 4rem;
+    /* border: 2px solid red; */
+    /* align-items: center; */
+    justify-content: space-between;
+    height: fit-content;
+}
+.input-container{
+    display: block;
+    text-align: left;
+    /* border: 2px solid blue; */
+    width: 100%;
+}
+.input-container input{
+    height: 3.5rem;
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid ;
+    border-bottom-color: var(--color);
+    color: var(--color);
+    font-size: 1.2rem;
+    text-align: left;
+    padding: .3rem 0rem;
+    transition: all .4s ease;
+
+}
+.input-container textarea{
+    border:none;
+    color:var(--color);
+    border: 2px solid;
+    border-color: var(--color);
+    border-radius: .5rem;
+    background: transparent;
+    width: 100%;
+    height: 30vh;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    transition: all .4s ease;
+}
+.message{
+    padding-top: 1rem;
+    position: relative;
+    /* border: 2px solid red; */
+    padding-bottom: 0rem;
+   width: 100%;
+}
+
+
+
+

@@ -1,0 +1,1096 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.3vw;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  outline: none;
+}
+:root {
+  --color: #ffffffe0;
+  --color2: #ff9900e5;
+  --background: #0f0f0f;
+  --padding: 0rem 3rem;
+  /* --background2:#242424; */
+}
+
+/* Works on Firefox */
+
+
+
+/* styling for headings with background image */
+.section-heading{
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px solid red; */
+  margin-bottom: 10vh;
+  overflow: hidden;
+  position: relative;
+}
+.heading-background-img{
+  position: absolute;
+  z-index: 1;
+  /* opacity: 0.4; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  bottom: 0;
+  object-fit: cover;
+}
+section.About{
+  padding: var(--padding);
+  /* border: 2px solid red; */
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+
+}
+
+/* utility classes */
+ .ma-tb /*margin-top and bottom*/{ 
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+}
+.ovf-x-h{
+  overflow: hidden;
+}
+.no-b-radius /*no border radius*/{
+  border-radius: 0rem;
+}
+
+.sec-btn /*secondary button*/{
+  transition: all 0.4s ease;
+}
+.sec-btn:hover {
+  background: var(--color2);
+  color: var(--color);
+}
+
+.sec-btn {
+  color: var(--color2);
+  border: none;
+  border: 1px solid;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 550;
+  font-size: 1rem;
+  cursor: pointer;
+  border-color: var(--color2);
+  background: transparent;
+}
+.pri-btn/*primary button*/ {
+  color: var(--color);
+  border: none;
+  border: 1px solid;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 550;
+  font-size: 1rem;
+  cursor: pointer;
+  border-color: var(--color2);
+  background: var(--color2);
+  transition: all .4s ease;
+}
+.pri-btn:hover{
+  background-color: var(--color);
+  color: var(--color2);
+  border-color: var(--color);
+}
+.contain /*utility class for image to cover*/{
+  object-fit: contain;
+}
+.pointer /*utility class*/{
+  cursor: pointer;
+}
+
+body {
+  background-color: #0f0f0f;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  padding: var(--padding);
+  position: fixed;
+  transition: all 0.5s ease;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  backdrop-filter: blur(15px);
+  background-color: #0f0f0f59;
+}
+
+.logo {
+  color: var(--color);
+  font-size: 2.2rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+nav , .nav-links{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+}
+nav .ham-menu{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 35px;
+  width: 35Px;
+  padding: 6px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+          transition: all .5s ease;
+          cursor: pointer;
+          display: none;
+
+}
+
+.ham-menu > span{
+  height: 2px;
+  background: gray;
+  border-radius: 4rem;
+  display: flex;
+  width: 100%;
+  transition: all .5s ease;
+}
+.ham-menu.open >span{
+  opacity: 0;
+  z-index: -1;
+}
+.ham-menu.open > .bar1{
+  transform: translateX(-100%);
+}
+.ham-menu.open > .bar3{
+  transform: translateX(100%);
+}
+
+.bar1{
+  transform: scaleX(.4);
+}
+
+.cancel-menu-icon{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+ transition: all .5s ease;
+}
+.cancel-menu-icon > span{
+  height: 2px;
+  background: gray;
+  border-radius: 4rem;
+  display: flex;
+  width: 0%;
+  transition: all .5s ease;
+  /* transform: scale(0); */
+  opacity: 0;
+  position: absolute;
+
+}
+.cancel-menu-icon > .bar1{
+  transform: rotate(45deg);
+  
+}
+.cancel-menu-icon > .bar2{
+  transform: rotate(-45deg);
+  
+}
+.ham-menu.open .cancel-menu-icon > span{
+  /* transform: scale(1); */
+  width: 80%;
+  opacity: 1;
+
+}
+
+
+nav a {
+  text-decoration: none;
+  color: var(--color);
+  transition: all 0.4s ease;
+  font-weight: 550;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+}
+nav a::before {
+  position: absolute;
+  bottom: -3px;
+  border-radius: 3rem;
+  left: 0;
+  content: "";
+  width: 80%;
+  height: 3px;
+  background-color: var(--color2);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.4s ease;
+}
+nav a:hover {
+  color: var(--color2);
+}
+nav a:hover::before {
+  transform: scaleX(1);
+}
+nav a.active {
+  color: var(--color2);
+}
+nav a.active::before {
+  transform: scaleX(1);
+}
+nav .sec-btn {
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+
+section.Home {
+  min-height: 100vh;
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 4px solid black;
+  position: relative;
+  /* border: 2px solid red; */
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  background-color: transparent;
+}
+.Home-bg-img {
+  position: absolute;
+  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  bottom: 0;
+  object-fit: cover;
+}
+
+.main-text-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-left: 3rem;
+  /* border: 2px solid red; */
+  max-width: 50%;
+  z-index: 100;
+  margin-top: 8rem;
+}
+/*utility-classes*/
+.bold {
+  /* display: flex; */
+  color: var(--color);
+  font-weight: 700;
+  font-size: 3.5rem;
+}
+.green {
+  color: rgb(0, 255, 115);
+  font-weight: 800;
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p.smaller {
+  color: var(--color);
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+.main-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.main-cta .sec-btn,
+.main-cta .pri-btn {
+  width: 100%;
+  height: 4rem;
+}
+
+.main-imgs {
+  margin-right: 3rem;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid red;
+  height: 70vh;
+  gap: 0.5rem;
+  width: 50%;
+  overflow: hidden;
+  border-radius: 4px;
+  transition: all 0.4s ease;
+  z-index: 100;
+}
+.img-cont {
+  background: rgb(53, 53, 53);
+  transition: all 0.4s ease;
+  overflow: hidden;
+
+}
+.span-1-container{
+  display: flex;
+  border: 2px solid blue;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+    overflow: hidden;
+
+}
+.span-1{
+  display: flex;
+  height: 50%;
+  /* object-position: center; */
+  position: relative;
+  border: 2px solid green;
+  transition: all .4s ease;
+  width: fit-content;
+  overflow-x: hidden;
+}
+.span-1 img{
+  object-fit: cover;
+  height: 100%;
+  width: 24vw;
+  
+  /* transform: translateX(-25vw); */
+  transition: all .4s ease;
+  /* position: absolute; */
+  
+  /* display: flex; */
+}
+.span-2{
+  height: 100%;
+  width: 50%;
+  /* object-position: center; */
+}
+.span-2 img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+section#feat {
+  padding-top: 3rem;
+}
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin-bottom: .4rem; */
+  padding: var(--padding);
+  padding-bottom: 2rem;
+}
+
+.heading3 {
+  color: var(--color);
+  font-weight: 550;
+  font-size: 1.6rem;
+}
+.heading6 {
+  color: var(--color);
+  font-weight: 550;
+  font-size: 1rem;
+}
+.heading-small {
+  color: var(--color);
+  font-size: 0.8rem;
+  font-weight: 550;
+}
+.colored-small {
+  color: var(--color2);
+  font-size: 0.9rem;
+  font-weight: 550;
+}
+
+/* Container for cards with prices */
+
+.cards-cont {
+  display: flex;
+  width: 100%;
+  /* border: 2px solid green; */
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  padding: var(--padding);
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 16rem;
+  height: 18rem;
+  border: 1px solid;
+  border-color: var(--color2);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.9rem;
+  align-items: center;
+  padding: 0.8rem;
+}
+
+.card .img {
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.37);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.card .img img {
+  object-fit: cover;
+  object-position: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.card-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.name {
+  color: var(--color);
+  font-size: 0.9rem;
+  font-weight: 550;
+}
+.price {
+  color: var(--color);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.info {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.img {
+  display: flex;
+  height: 20rem;
+  width: 40%;
+  border-radius: 1rem;
+  background: rgba(128, 128, 128, 0.432);
+  overflow: hidden;
+}
+.img img{
+  object-fit: cover;
+  width: 100%;
+}
+
+.text-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 40%;
+  gap: 1rem;
+}
+.text {
+  text-align: justify;
+  color: var(--color);
+  font-size: 1rem;
+  font-weight: 400;
+}
+.text-cont .pri-btn {
+  width: fit-content;
+}
+
+.About-us .text-cont {
+  width: 35%;
+}
+
+.banner-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 20rem;
+  overflow: hidden;
+  position: relative;
+  /* gap: 1rem; */
+  margin: 2rem 0rem 3rem 0rem;
+  /* padding-bottom: 3rem; */
+  /* border: 2px solid red; */
+}
+.banner-left {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  width: 100%;
+  height: 20rem;
+  overflow: hidden;
+  position: relative;
+  /* gap: 1rem; */
+  margin: 2rem 0rem 3rem 0rem;
+  /* padding-bottom: 3rem; */
+  /* border: 2px solid red; */
+}
+.baner-left .background-img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  bottom: 0;
+  object-fit: cover;
+}
+.banner-left .heading3{
+  text-align: left;
+
+}
+
+
+  .newsLetter-text{
+    z-index: 400;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 20rem;
+  overflow: hidden;
+  /* position: relative; */
+  gap: 1.5rem;
+  }
+.banner-center .bannerBackground {
+  /* object-fit: cover;
+  display: flex;
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+  overflow: hidden;
+  position: fixed;
+  opacity: 0.4; */
+
+   position: absolute;
+  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  bottom: 0;
+  object-fit: cover;
+}
+
+p.small {
+  font-size: 1rem;
+  color: var(--color);
+  font-weight: 500;
+  position: relative;
+  top: -1rem;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  /* border: 2px solid red; */
+  overflow: hidden;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+.input input {
+  display: flex;
+  width: 100%;
+  border: none;
+  background-color: var(--color);
+  color: var(--background);
+  padding: 0.8rem 1.2rem;
+  font-size: 1.1rem;
+}
+.input button.send {
+  border: none;
+  background-color: var(--color2);
+  color: var(--color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35%;
+  height: 100%;
+}
+
+.about-chef {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 5rem;
+  /* border: 2px solid green; */
+}
+.about-chef > .img{
+  width: fit-content;
+
+}
+.about-chef > .img img{
+  object-fit: cover;
+}
+
+.sub {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+section#restaurant {
+  padding: var(--padding);
+  /* border: 2px solid green; */
+  height: 40%;
+  margin-bottom: 5rem;
+}
+section#restaurant .heading3 {
+  text-align: center;
+}
+
+/* section#restaurant video{
+  
+} */
+
+footer {
+  padding: var(--padding);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  /* border: 2px solid red; */
+  width: 100%;
+}
+.column-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  width: 25%;
+  /* border: 2px solid blue; */
+}
+
+.heading-colored {
+  color: var(--color2);
+  font-size: 1.1rem;
+  font-weight: 550;
+}
+.heading-small-colored {
+  color: var(--color2);
+  font-size: 0.9rem;
+  font-weight: 550;
+}
+.info-bold {
+  color: var(--color);
+  font-size: 0.9rem;
+  font-weight: 550;
+}
+
+.text-small-light {
+  color: var(--color);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.copyright {
+  padding-bottom: 1rem;
+}
+
+
+
+/* utility classes */
+.pd  {
+  padding: var(--padding);
+}
+.img-container{
+   display: flex;
+  object-position: center;
+}
+.ma-btm{
+  margin-bottom: 3rem;
+}
+.link{
+  color: var(--color2);
+  padding-right: .5rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+.links{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.h1{
+  font-size: 3rem;
+  padding: 1rem 0rem;
+}
+.w-50{
+  max-width:50%;
+ 
+  /* border: 2px solid red; */
+}
+.w-50 img{
+  object-fit: contain;
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+}
+.flex{
+  display:flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  gap: 3rem;;
+}
+.heading-text{
+  z-index: 100;
+}
+.left{
+text-align: left;
+justify-self: left;
+display: flex;
+width: 100%;
+}
+.pl2{
+  padding-left: 2rem;
+}
+
+
+@media screen and (min-width:800px){
+  
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color) var(--color2);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(53, 53, 53);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color2);
+  border-radius: 20px;
+  /* border: 3px solid orange; */
+}
+
+}
+
+
+/* media queries for tablets and screens width width less than 768px */
+
+@media all and (max-width: 768px) {
+  * {
+    font-size: 0.75rem;
+  }
+  :root{
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  
+
+  /* utility classes */
+  .flex{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    gap: 3rem;
+  }
+  .w-50{
+    max-width:100%;
+   
+    /* border: 2px solid red; */
+  }
+  .h1{
+    font-size: 2.5rem;
+    padding: 1rem 0rem;
+  }
+
+  .nav-links{
+    position: fixed;
+    height: 100vh;
+    width: 60%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 5vh;
+    padding: 10rem 0rem;
+    transition: all .5s ease;
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  /* magic */
+  .nav-links.open{
+    
+    
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+    .nav-links a{
+      width: 100%;
+      /* display: flex; */
+      align-self: center;
+      justify-self: center;
+      /* border: 2px solid red; */
+      text-align:center;
+      border-radius: .5rem;
+      padding: 1.2rem;
+    }
+    .nav-links a:hover{
+      background-color: var(--color2);
+      color: var(--color);
+    }
+    .nav-links a.active{
+      background-color: var(--color2);
+      color: var(--color);
+    }
+    .nav-links a::before{
+      display: none;
+    }
+  nav a{
+    gap: 1rem;
+  }
+  nav{
+    gap: 1rem;
+  }
+ 
+  nav .ham-menu {
+    display: flex;
+  }
+  section.Home {
+    flex-direction: column;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    width: 100%;
+    gap: 2rem;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  .main-text-cont {
+    /* border: 2px solid blue; */
+    display: flex;
+    text-align: center;
+    margin: 0;
+    margin-top: 12rem;
+    width: 60%;
+    max-width: 100%;
+  }
+  /* section#Home img{
+      height: 165%;
+      overflow: hidden;
+  } */
+  .main-imgs {
+    /* border: 2px solid blue; */
+    margin: 0;
+
+    /* margin-bottom: 3rem; */
+    width: 80%;
+    height: 35rem;
+    max-width: 100%;
+  }
+  .colored-small {
+  color: var(--color2);
+  font-size: 1.1rem;
+  font-weight: 550;
+}
+.name, .price{
+  font-size: 1.2rem;
+
+}
+}
+
+@media all and (max-width: 670px) {
+  .main-text-cont {
+    width: 70%;
+  }
+
+  /* .info{
+      flex-direction: column;
+
+  } */
+}
+
+@media all and (max-width: 540px) {
+  .logo {
+    font-size: 2rem;
+  }
+  nav .ham-menu {
+    height: 30px;
+    width: 30px;
+  }
+  .nav-links{
+    width: 100%;
+  }
+ 
+  .nav-links a{
+    font-size: 1.2rem;
+  }
+  .nav-links-open a{
+    font-size: 1.2rem;
+
+  }
+ 
+
+  .main-text-cont {
+    width: 70%;
+  }
+
+  .info,
+  .about-chef {
+    flex-direction: column;
+    /* border: 2px solid red; */
+    width: 80%;
+    margin: auto;
+    padding-bottom: 5rem;
+  }
+  .text-cont {
+    width: 100%;
+    /* border: 2px solid blue; */
+  }
+  .img {
+    width: 100%;
+    /* border: 2px solid blue; */
+  }
+  .img img{
+    object-fit: cover;
+    width: 100%;
+  }
+  .About-us {
+    flex-direction: column-reverse;
+  }
+  .About-us .text-cont {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .input {
+    width: 65%;
+  }
+
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .column-flex {
+    width: 60%;
+  }
+}
+
+@media all and (max-width: 480px) {
+  :root {
+    --padding: 0rem 2rem;
+  }
+  nav a{
+    gap: .5rem;
+  }
+  .main-text-cont {
+    width: 90%;
+    /* border: 2px solid red; */
+  }
+  .cards-cont {
+    gap: 1rem;
+    display: grid;
+    /* width: 80%; */
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    width: auto;
+    grid-column: span 1;
+    height: auto;
+  }
+  .text{
+    text-align: justify;
+  }
+}
+
+@media all and (max-width: 420px) {
+  :root {
+    --padding: 0rem 1rem;
+  }
+  .card {
+    width: auto;
+    grid-column: span 2;
+  }
+  .h1{
+    font-size: 7.2vw;
+  }
+  
+}
+@media all and (max-width: 335px) {
+  * {
+    font-size: 3.4vw;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+}
+@media all and (max-width: 310px) {
+  
+  *{
+    font-size: 3.3vw;
+  }
+ 
+
+
+
+}
